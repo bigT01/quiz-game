@@ -1,0 +1,18 @@
+.wrong-animation{
+  animation: AnimationWrong 0.2s ease-in-out forwards;
+}
+
+@keyframes AnimationWrong {
+  0%{
+    position: relative;
+    left: -3px;
+  }
+  50%{
+    position: relative;
+    left: 3px;
+  }
+  100%{
+    position: relative;
+    left: 0px;
+  }
+}

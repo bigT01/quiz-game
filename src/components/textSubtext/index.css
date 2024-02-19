@@ -1,0 +1,17 @@
+.main-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.main-header h5 {
+  font-size: 30px;
+  color: #8692A6;
+  font-weight: bold;
+}
+.main-header p {
+  font-size: 19px;
+  color: #8692A6;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=index.css.map */

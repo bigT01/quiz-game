@@ -1,0 +1,111 @@
+.layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  gap: 30px;
+}
+.layout header {
+  width: 100%;
+  margin: 30px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.layout header .search {
+  border-radius: 30px;
+  padding: 20px 27px;
+  box-shadow: 0 15px 40px 5px #EDEDED;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.layout header .search button {
+  border: none;
+  background: transparent;
+}
+.layout header .search input {
+  border: none;
+  font-size: 19px;
+  outline: none;
+}
+.layout header .header-btn {
+  border: none;
+  border-radius: 30px;
+  background: #8692A6;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 17px 56px;
+  color: white;
+}
+.layout header .profile-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 15px;
+}
+.layout header .profile-link img {
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+.layout header .profile-link span {
+  color: #8692A6;
+  font-size: 19px;
+  text-decoration: none;
+}
+.layout .container {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-right: 30px;
+}
+.layout aside {
+  width: 25%;
+  height: 100%;
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+}
+.layout aside a {
+  border-radius: 30px;
+  background: transparent;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 17px 56px;
+  color: #8692A6;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.layout aside a.active {
+  background: #8692A6;
+  color: white;
+}
+.layout aside a.active svg path {
+  fill: white;
+}
+.layout aside .logout {
+  margin-top: auto;
+}
+.layout aside .logout a {
+  margin-top: 100%;
+}
+.layout aside ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: first;
+  gap: 30px;
+}
+.layout main {
+  background: #FFFFFF;
+  width: auto;
+  height: 100%;
+  margin: 36px 0 30px 0;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px 5px #EDEDED;
+  padding: 24px 40px;
+}
+
+/*# sourceMappingURL=index.css.map */

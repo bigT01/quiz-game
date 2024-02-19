@@ -1,0 +1,17 @@
+@import "../../style/variable";
+
+.main-header{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  h5{
+    font-size: $text-3xl;
+    color: $primary-color;
+    font-weight: bold;
+  }
+  p{
+    font-size: $text-1lg;
+    color: $primary-color;
+    font-weight: 400;
+  }
+}
