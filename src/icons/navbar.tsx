@@ -39,3 +39,12 @@ export const Logout = () => {
         </svg>
     )
 }
+
+export const BurgerMenu = () =>{
+    return (
+        <svg width="105" height="71" viewBox="0 0 105 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.89062 7.26562H98.1094M6.89062 35.5H98.1094M6.89062 63.7344H98.1094" stroke="black"
+                  strokeWidth="13.0312" strokeMiterlimit="10" strokeLinecap="round"/>
+        </svg>
+    )
+}

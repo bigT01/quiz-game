@@ -1,12 +1,29 @@
-import React, {ReactNode} from 'react';
-import './index.scss'
+import React, {ReactNode, useEffect, useRef, useState} from 'react';
 import {Link, NavLink} from "react-router-dom";
-import {Dashboard, Logout, Notification, Search, Support} from "../icons";
+import './index.scss'
+
+import {BurgerMenu, Dashboard, Logout, Notification, Search, Support} from "../icons";
 
 type LayoutProps = {
     children: ReactNode
 }
 const Layout = ({children}: LayoutProps) => {
+    const refMenu = useRef<HTMLElement>(null)
+    const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
+
+    //some error when using this use effect method
+    // useEffect(() => {
+    //     const checkIfClickedOutside = (e: MouseEvent) => {
+    //         if (refMenu.current && !((refMenu.current as HTMLElement).contains(e.target as Node))) {
+    //             setIsMenuActive(true);
+    //         }
+    //     }
+    //     document.addEventListener("click", checkIfClickedOutside)
+    //     return () => {
+    //         document.removeEventListener("click", checkIfClickedOutside)
+    //     }
+    // }, [isMenuActive])
+
     return (
         <div className='layout'>
             <aside>
@@ -40,8 +57,14 @@ const Layout = ({children}: LayoutProps) => {
                     </ul>
                 </nav>
             </aside>
+            <aside className={`mobile ${isMenuActive ? 'active' : 'non-active'}`} ref={refMenu}>
+
+            </aside>
             <div className='container'>
                 <header>
+                    <button className='mobile menu' onClick={() => setIsMenuActive(old => !old)}>
+                        <BurgerMenu/>
+                    </button>
                     {/*here search button to search some information from certain content*/}
                     <div className="search">
                         <button><Search/></button>

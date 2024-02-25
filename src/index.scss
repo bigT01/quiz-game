@@ -1,0 +1,57 @@
+@import url(./fonts/stylesheet.css);
+
+body {
+  margin: 0;
+  font-family: 'Poppins';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
+
+button{
+  border: none;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+p{
+  margin: 0 !important;
+}
+
+.flex{
+  display: flex;
+  &-col{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+
+.justify{
+  &-left{
+    justify-content: left;
+  }
+  &-right{
+    justify-content: right;
+  }
+  &-between{
+    justify-content: space-between;
+  }
+}
+
