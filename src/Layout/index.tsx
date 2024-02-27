@@ -3,63 +3,23 @@ import {Link, NavLink} from "react-router-dom";
 import './index.scss'
 
 import {BurgerMenu, Dashboard, Logout, Notification, Search, Support} from "../icons";
+import Aside from "../components/aside";
+import AsideMobile from "../components/aside/asideMobile";
 
 type LayoutProps = {
     children: ReactNode
 }
 const Layout = ({children}: LayoutProps) => {
-    const refMenu = useRef<HTMLElement>(null)
     const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
 
-    //some error when using this use effect method
-    // useEffect(() => {
-    //     const checkIfClickedOutside = (e: MouseEvent) => {
-    //         if (refMenu.current && !((refMenu.current as HTMLElement).contains(e.target as Node))) {
-    //             setIsMenuActive(true);
-    //         }
-    //     }
-    //     document.addEventListener("click", checkIfClickedOutside)
-    //     return () => {
-    //         document.removeEventListener("click", checkIfClickedOutside)
-    //     }
-    // }, [isMenuActive])
 
     return (
         <div className='layout'>
-            <aside>
-                <nav>
-                    <ul>
-                        <li>
-                            <NavLink to='/dashboard'>
-                                <Dashboard/>
-                                <span>Dashboard</span>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/support'>
-                                <Support/>
-                                <span>Support</span>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/notification'>
-                                <Notification/>
-                                <span>Notification</span>
-                            </NavLink>
-                        </li>
+            <Aside/>
 
-                        <li className='logout'>
-                            <NavLink to='/login'>
-                                <Logout/>
-                                <span>Log out</span>
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
-            <aside className={`mobile ${isMenuActive ? 'active' : 'non-active'}`} ref={refMenu}>
 
-            </aside>
+            <AsideMobile isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive}/>
+
             <div className='container'>
                 <header>
                     <button className='mobile menu' onClick={() => setIsMenuActive(old => !old)}>

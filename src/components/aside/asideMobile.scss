@@ -1,0 +1,29 @@
+@media screen and (max-width: 650px){
+  aside{
+    display: none;
+    &.mobile{
+      display: flex;
+      width: 50%;
+      position: absolute;
+      left: 0;
+      background: #EDEDED;
+      height: 100vh;
+    }
+  }
+
+  .blur-aside{
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #EDEDED80;
+    filter: blur(1.5rem);
+    height: 100vh;
+    &.active{
+      display: block;
+    }
+    &.non-active{
+      display: none;
+    }
+  }
+}

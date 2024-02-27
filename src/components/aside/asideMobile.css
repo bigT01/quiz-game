@@ -1,0 +1,30 @@
+@media screen and (max-width: 650px) {
+  aside {
+    display: none;
+  }
+  aside.mobile {
+    display: flex;
+    width: 50%;
+    position: absolute;
+    left: 0;
+    background: #EDEDED;
+    height: 100vh;
+  }
+  .blur-aside {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgba(237, 237, 237, 0.5019607843);
+    filter: blur(1.5rem);
+    height: 100vh;
+  }
+  .blur-aside.active {
+    display: block;
+  }
+  .blur-aside.non-active {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=asideMobile.css.map */

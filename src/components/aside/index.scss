@@ -1,0 +1,45 @@
+@import "../../style/variable";
+
+aside{
+  width: 25%;
+  height: 100%;
+  padding: 32px 0;
+  display: flex;
+  justify-content: center;
+  a{
+    border-radius: 30px;
+    background: transparent;
+    font-size: $text-1lg;
+    font-weight: 600;
+    padding: 17px 56px;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    &.active{
+      background: $primary-color;
+      color: white;
+      svg{
+        path{
+          fill: white;
+        }
+      }
+    }
+  }
+  .logout {
+    margin-top: auto;
+    a{
+      margin-top: 100%;
+    }
+  }
+
+
+  ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: first;
+    gap: 30px;
+  }
+}

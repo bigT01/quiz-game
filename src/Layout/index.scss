@@ -24,49 +24,6 @@
   margin-right: 30px;
 }
 
-aside{
-  width: 25%;
-  height: 100%;
-  padding: 32px 0;
-  display: flex;
-  justify-content: center;
-  a{
-    border-radius: 30px;
-    background: transparent;
-    font-size: $text-1lg;
-    font-weight: 600;
-    padding: 17px 56px;
-    color: $primary-color;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-
-    &.active{
-      background: $primary-color;
-      color: white;
-      svg{
-        path{
-          fill: white;
-        }
-      }
-    }
-  }
-  .logout {
-    margin-top: auto;
-    a{
-      margin-top: 100%;
-    }
-  }
-
-
-  ul{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: first;
-    gap: 30px;
-  }
-}
 
 header{
   width: 100%;
@@ -127,23 +84,14 @@ header{
 @media screen and (max-width: 650px){
   .layout{
     position: relative;
+    gap: 0;
   }
   .container{
     width: 100%;
     margin-right: 5px;
     margin-left: 5px;
   }
-  aside{
-    display: none;
-    &.mobile{
-      display: flex;
-      width: 50%;
-      position: absolute;
-      left: 0;
-      background: #000;
-      height: 100vh;
-    }
-  }
+
   .search{
     display: none;
   }
