@@ -17,7 +17,6 @@ const Layout = ({children}: LayoutProps) => {
         <div className='layout'>
             <Aside/>
 
-
             <AsideMobile isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive}/>
 
             <div className='container'>
