@@ -1,0 +1,58 @@
+.logout {
+  margin-top: auto;
+}
+.logout a {
+  margin-top: 100%;
+}
+
+ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: first;
+  gap: 30px;
+}
+
+a {
+  border-radius: 30px;
+  background: transparent;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 17px 56px;
+  color: #8692A6;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+a.active {
+  background: #8692A6;
+  color: white;
+}
+a.active svg path {
+  fill: white;
+}
+
+@media screen and (max-width: 650px) {
+  a {
+    border-radius: 0;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    background: transparent;
+    font-size: 19px;
+    font-weight: 600;
+    padding: 10px 24px;
+    color: #8692A6;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: first;
+    gap: 15px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

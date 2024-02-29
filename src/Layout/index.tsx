@@ -16,11 +16,13 @@ const Layout = ({children}: LayoutProps) => {
     return (
         <div className='layout'>
             <Aside/>
-
+            {/*compare with simple Aside in mobile version I passed useStates.
+            However, passing setters are bad experience.*/}
             <AsideMobile isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive}/>
 
             <div className='container'>
                 <header>
+                    {/*this button will show only in mobile version. As you can see it is Burger menu button.*/}
                     <button className='mobile menu' onClick={() => setIsMenuActive(old => !old)}>
                         <BurgerMenu/>
                     </button>

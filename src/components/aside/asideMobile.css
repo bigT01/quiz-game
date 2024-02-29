@@ -10,26 +10,6 @@
     background: #EDEDED;
     height: 100vh;
   }
-  aside ul {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: first;
-    gap: 15px;
-  }
-  aside a {
-    border-radius: 0;
-    border-bottom-right-radius: 30px;
-    border-top-right-radius: 30px;
-    background: transparent;
-    font-size: 19px;
-    font-weight: 600;
-    padding: 10px 24px;
-    color: #8692A6;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
   .blur-aside {
     width: 50%;
     position: absolute;
