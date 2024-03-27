@@ -1,0 +1,58 @@
+@import "../../../style/variable";
+
+.quiz{
+  margin-top: 20px;
+  .header_wrapper{
+    display: flex;
+    gap: 45px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+    .right-content{
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      .info-item{
+        display: flex;
+        gap: 20px;
+        color: #696F79;
+        align-items: center;
+        p{
+          font-size: 20px;
+          font-weight: 400;
+          &.left{
+            font-size: 23px;
+            font-weight: 600;
+          }
+        }
+      }
+
+    }
+  }
+  .additional{
+    color: #696F79;
+    margin-bottom: 25px;
+    h5{
+      font-weight: 600;
+      font-size: 23px;
+      margin-bottom: 25px;
+    }
+    p{
+      font-size: 18px;
+    }
+  }
+  .startBtn-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .startBtn{
+      border: none;
+      border-radius: 30px;
+      background: $primary-color;
+      font-size: $text-1lg;
+      font-weight: 600;
+      padding: 17px 56px;
+      color: white;
+    }
+  }
+
+}

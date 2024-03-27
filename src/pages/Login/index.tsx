@@ -1,7 +1,7 @@
 import './index.scss'
-import {ArrowBottomRight, Quote} from "../icons";
+import {ArrowBottomRight, Quote} from "../../icons";
 import {FormEvent, useEffect, useState} from "react";
-import {useStore} from "../store/useStore";
+import {useStore} from "../../store/useStore";
 import {Navigate} from "react-router-dom";
 
 const Login = () => {

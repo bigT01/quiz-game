@@ -1,5 +1,5 @@
-@import "../style/variable";
-@import "../style/animation";
+@import "../../style/variable";
+@import "../../style/animation";
 
 .login{
   display: flex;
@@ -167,7 +167,7 @@ form{
 }
 
 .blur{
-  background-image: url('../../public/books.png');
+  background-image: url('../../../public/books.png');
   background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
