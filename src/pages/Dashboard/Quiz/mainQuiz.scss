@@ -1,0 +1,71 @@
+@import "../../../style/variable";
+
+.main-quiz-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 24px;
+  h3{
+    font-size: $text-3xl;
+    color: $grey-600-color;
+  }
+}
+
+.main-quiz{
+  width: 100%;
+}
+
+.header_wrapper{
+  display: flex;
+  gap: 45px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+  .right-content {
+    h5{
+      font-size: $text-xl;
+      color: $grey-600-color;
+    }
+    p{
+      color: $grey-600-color;
+      font-size: $text-lg;
+    }
+  }
+}
+
+.additional{
+  color: $grey-600-color;
+  margin-bottom: 25px;
+  h5{
+    font-weight: 600;
+    font-size: 23px;
+    margin-bottom: 25px;
+  }
+  .input-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .custom-radio{
+    p{
+      color: $grey-600-color;
+      font-size: $text-lg;
+    }
+  }
+}
+
+.Btn-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .btn{
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background: $primary-color;
+    font-size: $text-1lg;
+    font-weight: 600;
+    padding: 17px 56px;
+    color: white;
+  }
+}

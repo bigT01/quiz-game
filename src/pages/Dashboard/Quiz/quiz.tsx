@@ -1,8 +1,10 @@
 import React from 'react';
 import TextSubtext from "../../../components/textSubtext";
 import "./quiz.scss"
+import {useNavigate} from "react-router-dom";
 
 const Quiz = () => {
+    const navigate = useNavigate()
     return (
         <>
             <TextSubtext text={'History Quiz'} subText={'Read the following instructions'}/>
@@ -41,9 +43,8 @@ const Quiz = () => {
                         To start, click the "Start" button. When finished, click the "Submit " button.</p>
                 </div>
                 <div className="startBtn-wrapper">
-                    <button className='startBtn'>Start</button>
+                    <button className='startBtn' onClick={() => {navigate('start/1')}}>Start</button>
                 </div>
-
             </section>
         </>
     );

@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Quiz from "./pages/Dashboard/Quiz/quiz";
+import MainQuiz from "./pages/Dashboard/Quiz/mainQuiz";
 
 
 const root = ReactDOM.createRoot(
@@ -19,6 +20,7 @@ root.render(
               <Route path={'/'} element={<App/>}>
                   <Route path={'/dashboard'} element={<Dashboard/> }/>
                   <Route path={'/dashboard/quiz/:id'} element={<Quiz/> }/>
+                  <Route path={'/dashboard/quiz/:id/start/:questionId'} element={<MainQuiz/> }/>
               </Route>
               <Route path={'/login'} element={<Login/>} />
           </Routes>

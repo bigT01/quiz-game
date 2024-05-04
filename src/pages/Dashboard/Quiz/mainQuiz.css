@@ -1,0 +1,67 @@
+.main-quiz-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.main-quiz-header h3 {
+  font-size: 30px;
+  color: #696F79;
+}
+
+.main-quiz {
+  width: 100%;
+}
+
+.header_wrapper {
+  display: flex;
+  gap: 45px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+.header_wrapper .right-content h5 {
+  font-size: 24px;
+  color: #696F79;
+}
+.header_wrapper .right-content p {
+  color: #696F79;
+  font-size: 18px;
+}
+
+.additional {
+  color: #696F79;
+  margin-bottom: 25px;
+}
+.additional h5 {
+  font-weight: 600;
+  font-size: 23px;
+  margin-bottom: 25px;
+}
+.additional .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.additional .custom-radio p {
+  color: #696F79;
+  font-size: 18px;
+}
+
+.Btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Btn-wrapper .btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  background: #8692A6;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 17px 56px;
+  color: white;
+}
+
+/*# sourceMappingURL=mainQuiz.css.map */
