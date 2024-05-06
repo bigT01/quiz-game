@@ -6,30 +6,18 @@ import "./index.scss"
 
 const Dashboard = () => {
     const isLogin = useStore((state) => state.isLogin)
+    const quiz = useStore((state) => state.quiz)
     return (
         <>
             <TextSubtext text={'Select Topic'} subText={'Featured Category'}/>
             <section className={"dashboard"}>
-                <div className='item-topic'>
-                    <img src="./history.png" alt="img:history"/>
-                    <p>History</p>
-                    <Link to='/dashboard/quiz/1'>link</Link>
-                </div>
-                <div className='item-topic'>
-                    <img src="./med.png" alt="img:history"/>
-                    <p>Medicine</p>
-                    <Link to='/dashboard/quiz/1'>link</Link>
-                </div>
-                <div className='item-topic'>
-                    <img src="./technology.png" alt="img:history"/>
-                    <p>Technology</p>
-                    <Link to='/dashboard/quiz/1'>link</Link>
-                </div>
-                <div className='item-topic'>
-                    <img src="./Agriculture.png" alt="img:history"/>
-                    <p>Agriculture</p>
-                    <Link to='/dashboard/quiz/1'>link</Link>
-                </div>
+                {quiz[0] ? quiz.map((element) => (
+                    <div className='item-topic'>
+                        <img src={element.image} alt={`img:${element.name}`}/>
+                        <p>{element.name}</p>
+                        <Link to={`quiz/${element.id}`}>link</Link>
+                    </div>
+                )) : null}
             </section>
         </>
     );

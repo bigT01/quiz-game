@@ -58,11 +58,21 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  .btn{
+  .btn-able{
     cursor: pointer;
     border: none;
     border-radius: 30px;
     background: $primary-color;
+    font-size: $text-1lg;
+    font-weight: 600;
+    padding: 17px 56px;
+    color: white;
+  }
+  .btn-disable{
+    cursor: not-allowed;
+    border: none;
+    border-radius: 30px;
+    background: #8692A650;
     font-size: $text-1lg;
     font-weight: 600;
     padding: 17px 56px;

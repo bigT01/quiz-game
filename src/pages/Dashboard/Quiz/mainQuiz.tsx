@@ -1,74 +1,86 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import TextSubtext from "../../../components/textSubtext";
 
 import './mainQuiz.scss'
+import Timer from "../../../components/timer";
+import {useNavigate, useParams} from "react-router-dom";
+import {question, useStore} from "../../../store/useStore";
 
 const MainQuiz = () => {
-    const [selected, setSelected] = useState('1')
+    const navigate = useNavigate()
+    let { id, questionId } = useParams();
 
-    const obj = {
-        questionNumber: 3,
-        allQuestions: 10,
-        description: 'Guy Bailey, Roy Hackett and Paul Stephenson made history in 1963, as part of a protest against a bus company that refused to employ black and Asian drivers in which UK city?',
-        variant: [
-            {value: 1, label: 'London'},
-            {value: 2, label: 'Edinburgh'},
-            {value: 3, label: 'Liverpool'},
-            {value: 4, label: 'Canary Wharf'},
-        ]
+    const [data, setData] = useState<question| null>(null)
+    const [selectedTemp, setSelectedTemp] = useState('0')
+
+    const quiz = useStore(state => state.quiz)
+    const setSelected = useStore(state => state.setSelected)
+    const setSelectedEmpty = useStore(state => state.setSelectedEmpty)
+
+    useEffect(() => {
+        if(quiz[0]){
+            setData(quiz.filter((element) => element.id === Number(id))[0].questions.filter((element) => element.questionNumber === Number(questionId))[0])
+        }
+    }, [quiz, questionId]);
+
+    const onNextPage = () => {
+        if(data && questionId){
+            if(data?.questionNumber + 1 <= data?.allQuestions){
+                setSelectedTemp('0')
+                setSelected({questionNumber: Number(questionId), value: Number(selectedTemp)})
+                navigate(`/dashboard/quiz/${id}/start/${Number(questionId)+1}`)
+            } else{
+                setSelectedEmpty()
+            }
+        }
     }
 
-    return (
+    const onPreviewsPage = () => {
+        if(data){
+            if(data?.questionNumber - 1 > 0){
+                setSelectedTemp('0')
+                setSelected({questionNumber: Number(questionId), value: Number(selectedTemp)})
+                navigate(`/dashboard/quiz/${id}/start/${Number(questionId)-1}`)
+            }
+        }
+    }
+
+    return data ? (
         <>
             <div className={'main-quiz-header'}>
-                <TextSubtext text={'History Quiz'} subText={'Answer the question below'}/>
-                <h3>Timer: 29:09 Mins</h3>
+                <TextSubtext text={`${data.name} Quiz`} subText={'Answer the question below'}/>
+                <Timer/>
             </div>
             <section className={'main-quiz'}>
                 <div className="header_wrapper">
                     <img src="/history.png" alt="" width={503} height={296}/>
                     <div className="right-content">
-                        <h5>Question 1/5</h5>
-                        <p>Guy Bailey, Roy Hackett and Paul Stephenson made history in 1963, as part of a protest
-                            against a bus company that refused to employ black and Asian drivers in which UK city?</p>
+                        <h5>Question {data.questionNumber}/{data.allQuestions}</h5>
+                        <p>{data.description}</p>
                     </div>
                 </div>
                 <div className="additional">
                     <h5>Choose answer</h5>
                     <div className="input-wrapper">
-                        <label className="custom-radio">
-                            <input type="radio" name="group1" value="1" checked={selected === '1'}
-                                   onChange={(e) => setSelected(e.target.value)}/>
-                            <span></span>
-                            <p>Option 1</p>
-                        </label>
-                        <label className="custom-radio">
-                            <input type="radio" name="group2" value="2" checked={selected === '2'}
-                                   onChange={(e) => setSelected(e.target.value)}/>
-                            <span></span>
-                            <p>Option 2</p>
-                        </label>
-                        <label className="custom-radio">
-                            <input type="radio" name="group3" value="3" checked={selected === '3'}
-                                   onChange={(e) => setSelected(e.target.value)}/>
-                            <span></span>
-                            <p>Option 3</p>
-                        </label>
-                        <label className="custom-radio">
-                            <input type="radio" name="group4" value="4" checked={selected === '4'}
-                                   onChange={(e) => setSelected(e.target.value)}/>
-                            <span></span>
-                            <p>Option 4</p>
-                        </label>
+                        {data.variants[0] ? data.variants.map( (element) =>
+                            (
+                                <label className="custom-radio">
+                                    <input type="radio" name={element.label} value={element.value} checked={selectedTemp === `${element.value}`}
+                                           onChange={(e) => setSelectedTemp(e.target.value)}/>
+                                    <span></span>
+                                    <p>{element.label}</p>
+                                </label>
+                            )
+                        ) : null}
                     </div>
                 </div>
                 <div className="Btn-wrapper">
-                    <button className='btn'>Previews</button>
-                    <button className='btn'>Next</button>
+                    <button className={`btn-${data.questionNumber === 1 ? 'disable': 'able'}`} onClick={() => onPreviewsPage()}>Previews</button>
+                    <button className={`btn-able`} onClick={() => onNextPage()}>{data.questionNumber === data.allQuestions ? 'Submit': 'Next'}</button>
                 </div>
             </section>
         </>
-    );
+    ): null
 };
 
 export default MainQuiz;
