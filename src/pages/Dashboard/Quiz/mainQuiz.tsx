@@ -85,7 +85,7 @@ const MainQuiz = () => {
             </div>
             <section className={'main-quiz'}>
                 <div className="header_wrapper">
-                    <img src="/history.png" alt="" width={503} height={296}/>
+                    <img src={quiz.filter(element => element.id === Number(id))[0].image} alt={`img:${quiz.filter(element => element.id === Number(id))[0].image}`} width={503} height={296}/>
                     <div className="right-content">
                         <h5>Question {data.questionNumber}/{data.allQuestions}</h5>
                         <p>{data.description}</p>
