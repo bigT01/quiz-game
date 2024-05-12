@@ -185,6 +185,7 @@ form button {
   font-weight: 500;
   padding: 18px 0;
   border-radius: 30px;
+  cursor: pointer;
 }
 form p.wrong-animation {
   margin-bottom: 15px !important;

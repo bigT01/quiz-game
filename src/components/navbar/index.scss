@@ -2,8 +2,18 @@
 
 .logout {
   margin-top: auto;
-  a{
+  button{
     margin-top: 100%;
+    border-radius: 30px;
+    background: transparent;
+    font-size: $text-1lg;
+    font-weight: 600;
+    padding: 17px 56px;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
   }
 }
 
