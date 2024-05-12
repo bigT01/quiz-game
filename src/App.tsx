@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.scss';
 import Layout from "./Layout";
-import {Outlet} from "react-router-dom";
+import {Navigate, Outlet} from "react-router-dom";
+import {useStore} from "./store/useStore";
 
 function App() {
-    const [isLogined, setIslogined] = useState(false)
+    const isLogin = useStore((state) => state.isLogin)
 
 
-    return (
+    return isLogin ? (
         <Layout>
             <Outlet/>
         </Layout>
-    )
+    ) : <Navigate to="/login" replace={true} />
 }
 
 export default App;

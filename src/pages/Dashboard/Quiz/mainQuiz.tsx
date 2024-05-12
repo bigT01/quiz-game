@@ -138,7 +138,6 @@ const MainQuiz = () => {
                     :
                     null
             }
-
         </>
     ) : null
 };

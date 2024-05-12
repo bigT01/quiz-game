@@ -5,7 +5,6 @@ import TextSubtext from "../../components/textSubtext";
 import "./index.scss"
 
 const Dashboard = () => {
-    const isLogin = useStore((state) => state.isLogin)
     const quiz = useStore((state) => state.quiz)
     return (
         <>
