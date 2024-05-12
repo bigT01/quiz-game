@@ -1,3 +1,138 @@
+.main-quiz-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.main-quiz-header h3 {
+  font-size: 30px;
+  color: #696F79;
+}
 
+.main-quiz {
+  width: 100%;
+}
+
+.header_wrapper {
+  display: flex;
+  gap: 45px;
+  margin-bottom: 25px;
+  align-items: flex-start;
+}
+.header_wrapper .right-content h5 {
+  font-size: 24px;
+  color: #696F79;
+}
+.header_wrapper .right-content p {
+  color: #696F79;
+  font-size: 18px;
+}
+
+.additional {
+  color: #696F79;
+  margin-bottom: 25px;
+}
+.additional h5 {
+  font-weight: 600;
+  font-size: 23px;
+  margin-bottom: 25px;
+}
+.additional .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.additional .custom-radio {
+  display: flex;
+  gap: 90px;
+}
+.additional .custom-radio p {
+  color: #696F79;
+  font-size: 18px;
+}
+
+.Btn-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.Btn-wrapper .btn-able {
+  cursor: pointer;
+  border: none;
+  border-radius: 30px;
+  background: #8692A6;
+  font-size: 19px;
+  font-weight: 600;
+  padding: 17px 56px;
+  color: white;
+}
+.Btn-wrapper .btn-disable {
+  cursor: not-allowed;
+  border: none;
+  border-radius: 30px;
+  background: rgba(134, 146, 166, 0.3137254902);
+  font-size: 19px;
+  font-weight: 600;
+  padding: 17px 56px;
+  color: white;
+}
+
+.popUp-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(105, 111, 121, 0.5019607843);
+  left: 0;
+  top: 0;
+}
+.popUp-wrapper .popUp {
+  width: 400px;
+  height: 400px;
+  background: #FFFFFF;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 69px 0;
+}
+.popUp-wrapper .popUp .question-mark {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1450980392);
+  color: #FFFFFF;
+  background: #4B5548;
+  font-size: 48px;
+}
+.popUp-wrapper .popUp .context {
+  text-align: center;
+  font-size: 16px;
+}
+.popUp-wrapper .popUp .btn-wrapper {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+.popUp-wrapper .popUp .btn-wrapper button {
+  cursor: pointer;
+  background: transparent;
+  font-weight: bold;
+  font-size: 16px;
+}
+.popUp-wrapper .popUp a {
+  cursor: pointer;
+  background: transparent;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+}
 
 /*# sourceMappingURL=resultQuiz.css.map */

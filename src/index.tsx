@@ -8,6 +8,7 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Quiz from "./pages/Dashboard/Quiz/quiz";
 import MainQuiz from "./pages/Dashboard/Quiz/mainQuiz";
+import ResultQuiz from "./pages/Dashboard/Quiz/resultQuiz";
 
 
 const root = ReactDOM.createRoot(
@@ -21,6 +22,7 @@ root.render(
                   <Route path={'/dashboard'} element={<Dashboard/> }/>
                   <Route path={'/dashboard/quiz/:id'} element={<Quiz/> }/>
                   <Route path={'/dashboard/quiz/:id/start/:questionId'} element={<MainQuiz/> }/>
+                  <Route path={'/dashboard/quiz/:id/result/:questionId'} element={<ResultQuiz/> }/>
               </Route>
               <Route path={'/login'} element={<Login/>} />
           </Routes>

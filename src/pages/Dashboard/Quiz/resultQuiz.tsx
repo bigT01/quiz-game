@@ -2,31 +2,24 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import {question, useStore} from "../../../store/useStore";
 import TextSubtext from "../../../components/textSubtext";
-import Timer from "../../../components/timer";
+import './resultQuiz.scss'
 
 const ResultQuiz = () => {
     const navigate = useNavigate()
     let { id, questionId } = useParams();
 
     const [data, setData] = useState<question| null>(null)
-    const [selectedTemp, setSelectedTemp] = useState('0')
 
     const quiz = useStore(state => state.quiz)
     const selected = useStore(state => state.selected)
-    const setSelected = useStore(state => state.setSelected)
     const setSelectedEmpty = useStore(state => state.setSelectedEmpty)
 
-    useEffect(() => {
-        //this function will show saved data from store
-        if(selected[0]){
-            setSelectedTemp(selected.filter(element => element.questionNumber === Number(questionId))[0] ? `${selected.filter(element => element.questionNumber === Number(questionId))[0].value}` : '0')
-        }
-    }, [questionId]);
 
     useEffect(() => {
         // this function putting information to the data state and filtering by id which got from params
         if(quiz[0]){
             setData(quiz.filter((element) => element.id === Number(id))[0].questions.filter((element) => element.questionNumber === Number(questionId))[0])
+
         }
     }, [quiz, questionId]);
 
@@ -35,11 +28,10 @@ const ResultQuiz = () => {
         if(data && questionId){
             //here checking there is next question have or not in case if have it will navigate to the next question or will work submit question
             if(data?.questionNumber + 1 <= data?.allQuestions){
-                setSelectedTemp('0')
-                setSelected({questionNumber: Number(questionId), value: Number(selectedTemp)})
-                navigate(`/dashboard/quiz/${id}/start/${Number(questionId)+1}`)
+                navigate(`/dashboard/quiz/${id}/result/${Number(questionId)+1}`)
             } else{
                 setSelectedEmpty()
+                navigate(`/dashboard/quiz`)
             }
         }
     }
@@ -48,9 +40,7 @@ const ResultQuiz = () => {
         //here checking only for previews question and here will work only one function
         if(data){
             if(data?.questionNumber - 1 > 0){
-                setSelectedTemp('0')
-                setSelected({questionNumber: Number(questionId), value: Number(selectedTemp)})
-                navigate(`/dashboard/quiz/${id}/start/${Number(questionId)-1}`)
+                navigate(`/dashboard/quiz/${id}/result/${Number(questionId)-1}`)
             }
         }
     }
@@ -58,7 +48,7 @@ const ResultQuiz = () => {
         <>
             <div className={'main-quiz-header'}>
                 <TextSubtext text={`${data.name} Quiz`} subText={'Answer the question below'}/>
-                <Timer/>
+                {/*<Timer/>*/}
             </div>
             <section className={'main-quiz'}>
                 <div className="header_wrapper">
@@ -74,10 +64,12 @@ const ResultQuiz = () => {
                         {data.variants[0] ? data.variants.map( (element) =>
                             (
                                 <label className="custom-radio">
-                                    <input type="radio" name={element.label} value={element.value} checked={selectedTemp === `${element.value}`}
-                                           onChange={(e) => setSelectedTemp(e.target.value)}/>
+                                    <input type="radio" name={element.label} value={element.value} checked={selected[0] ? selected.filter(element => element.questionNumber === Number(questionId))[0].value === element.value : false}/>
                                     <span></span>
                                     <p>{element.label}</p>
+                                    {selected[0] ? selected.filter(element => element.questionNumber === Number(questionId))[0].value === element.value ? <p style={{color: 'red'}}>Your answer</p> : null : null}
+                                    {quiz[0] ? quiz.filter(element => element.id === Number(id))[0].correctVariants.filter(element1 => element1.questionNumber === Number(questionId))[0].value === element.value ?
+                                        <p style={{color: 'green'}}>Correct answer</p> : null : null}
                                 </label>
                             )
                         ) : null}
