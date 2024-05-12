@@ -79,3 +79,60 @@
     color: white;
   }
 }
+
+.popUp-wrapper{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #696F7980;
+  left: 0;
+  top: 0;
+  .popUp{
+    width: 400px;
+    height: 400px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 69px 0;
+    .question-mark{
+      width: 88px;
+      height: 88px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+      box-shadow: 0 10px 30px #00000025;
+      color: #FFFFFF;
+      background: #4B5548;
+      font-size: 48px;
+    }
+    .context{
+      text-align: center;
+      font-size: 16px;
+    }
+    .btn-wrapper{
+      width: 65%;
+      display: flex;
+      justify-content: space-between;
+      button{
+        cursor: pointer;
+        background: transparent;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+    a{
+      cursor: pointer;
+      background: transparent;
+      font-weight: bold;
+      font-size: 16px;
+      color: #000000;
+    }
+  }
+}

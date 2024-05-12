@@ -1,7 +1,7 @@
 import {create} from "zustand";
 import {devtools, persist} from "zustand/middleware";
 
-interface selected {
+export interface selected {
     questionNumber: number,
     value: number
 }
