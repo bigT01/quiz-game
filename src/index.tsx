@@ -9,6 +9,8 @@ import Login from "./pages/Login";
 import Quiz from "./pages/Dashboard/Quiz/quiz";
 import MainQuiz from "./pages/Dashboard/Quiz/mainQuiz";
 import ResultQuiz from "./pages/Dashboard/Quiz/resultQuiz";
+import Support from "./pages/Support/Support";
+import Notification from "./pages/Notification";
 
 
 const root = ReactDOM.createRoot(
@@ -20,6 +22,8 @@ root.render(
           <Routes>
               <Route path={'/'} element={<App/>}>
                   <Route path={'/dashboard'} element={<Dashboard/> }/>
+                  <Route path={'/support'} element={<Support/> }/>
+                  <Route path={'/notification'} element={<Notification/> }/>
                   <Route path={'/dashboard/quiz/:id'} element={<Quiz/> }/>
                   <Route path={'/dashboard/quiz/:id/start/:questionId'} element={<MainQuiz/> }/>
                   <Route path={'/dashboard/quiz/:id/result/:questionId'} element={<ResultQuiz/> }/>

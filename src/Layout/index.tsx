@@ -34,7 +34,7 @@ const Layout = ({children}: LayoutProps) => {
                     {/*this is quick start quiz button will randomly take some quiz from db*/}
                     <button className='header-btn'>start quiz</button>
                     {/*button to profile page*/}
-                    <Link to={'/dashboard/profile'} className='profile-link'>
+                    <Link to={'/dashboard'} className='profile-link'>
                         <img src="/profile.png" alt="prfile"/>
                         <span>Oluwatobi..</span>
                     </Link>

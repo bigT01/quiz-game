@@ -57,12 +57,13 @@ interface IState {
 
 export const useStore = create<IState>()((set) => ({
     user: {email: 'usr@tana.com', password: 'password'},
-    quiz: [{
+    quiz: [
+        {
         id: 1,
         name: 'History',
         image: '/history.png',
         deadline: '28/07/2024',
-        duration: 10,
+        duration: 300,
         point: 230,
         attempt: 'once',
         allQuestions: 5,
@@ -210,7 +211,316 @@ export const useStore = create<IState>()((set) => ({
                 value: 1
             }
         ]
-    }],
+    },
+        {
+            id: 2,
+            name: "Medicine",
+            image: "/med.png",
+            deadline: "28/07/2024",
+            duration: 180,
+            point: 230,
+            attempt: "once",
+            allQuestions: 5,
+            questions: [
+                {
+                    name: "Medicine",
+                    questionNumber: 1,
+                    allQuestions: 5,
+                    description: "Who is credited with discovering penicillin?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Alexander Fleming"
+                        },
+                        {
+                            value: 2,
+                            label: "Louis Pasteur"
+                        },
+                        {
+                            value: 3,
+                            label: "Marie Curie"
+                        },
+                        {
+                            value: 4,
+                            label: "Robert Koch"
+                        }
+                    ]
+                },
+                {
+                    name: "Medicine",
+                    questionNumber: 2,
+                    allQuestions: 5,
+                    description: "What is the scientific name for the 'windpipe'?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Trachea"
+                        },
+                        {
+                            value: 2,
+                            label: "Bronchus"
+                        },
+                        {
+                            value: 3,
+                            label: "Esophagus"
+                        },
+                        {
+                            value: 4,
+                            label: "Larynx"
+                        }
+                    ]
+                },
+                {
+                    name: "Medicine",
+                    questionNumber: 3,
+                    allQuestions: 5,
+                    description: "Which vitamin is synthesized by the skin when exposed to sunlight?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Vitamin C"
+                        },
+                        {
+                            value: 2,
+                            label: "Vitamin D"
+                        },
+                        {
+                            value: 3,
+                            label: "Vitamin E"
+                        },
+                        {
+                            value: 4,
+                            label: "Vitamin K"
+                        }
+                    ]
+                },
+                {
+                    name: "Medicine",
+                    questionNumber: 4,
+                    allQuestions: 5,
+                    description: "Which part of the brain is responsible for regulating basic bodily functions such as breathing and heart rate?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Medulla oblongata"
+                        },
+                        {
+                            value: 2,
+                            label: "Cerebellum"
+                        },
+                        {
+                            value: 3,
+                            label: "Hypothalamus"
+                        },
+                        {
+                            value: 4,
+                            label: "Thalamus"
+                        }
+                    ]
+                },
+                {
+                    name: "Medicine",
+                    questionNumber: 5,
+                    allQuestions: 5,
+                    description: "What is the main function of insulin in the human body?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Regulating blood sugar levels"
+                        },
+                        {
+                            value: 2,
+                            label: "Digesting food"
+                        },
+                        {
+                            value: 3,
+                            label: "Producing energy"
+                        },
+                        {
+                            value: 4,
+                            label: "Transporting oxygen"
+                        }
+                    ]
+                }
+            ],
+            correctVariants: [
+                {
+                    questionNumber: 1,
+                    value: 1
+                },
+                {
+                    questionNumber: 2,
+                    value: 1
+                },
+                {
+                    questionNumber: 3,
+                    value: 2
+                },
+                {
+                    questionNumber: 4,
+                    value: 1
+                },
+                {
+                    questionNumber: 5,
+                    value: 1
+                }
+            ]
+        },
+        {
+            id: 3,
+            name: "Agriculture",
+            image: "/Agriculture.png",
+            deadline: "28/07/2024",
+            duration: 120,
+            point: 230,
+            attempt: "once",
+            allQuestions: 5,
+            questions: [
+                {
+                    name: "Agriculture",
+                    questionNumber: 1,
+                    allQuestions: 5,
+                    description: "Which gas is essential for photosynthesis?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Oxygen"
+                        },
+                        {
+                            value: 2,
+                            label: "Carbon dioxide"
+                        },
+                        {
+                            value: 3,
+                            label: "Nitrogen"
+                        },
+                        {
+                            value: 4,
+                            label: "Hydrogen"
+                        }
+                    ]
+                },
+                {
+                    name: "Agriculture",
+                    questionNumber: 2,
+                    allQuestions: 5,
+                    description: "What is the process of breeding animals or plants to have certain desired traits called?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Hybridization"
+                        },
+                        {
+                            value: 2,
+                            label: "Cross-pollination"
+                        },
+                        {
+                            value: 3,
+                            label: "Selection"
+                        },
+                        {
+                            value: 4,
+                            label: "Grafting"
+                        }
+                    ]
+                },
+                {
+                    name: "Agriculture",
+                    questionNumber: 3,
+                    allQuestions: 5,
+                    description: "What is the main component of organic fertilizers?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Synthetic chemicals"
+                        },
+                        {
+                            value: 2,
+                            label: "Minerals"
+                        },
+                        {
+                            value: 3,
+                            label: "Plant and animal matter"
+                        },
+                        {
+                            value: 4,
+                            label: "Pesticides"
+                        }
+                    ]
+                },
+                {
+                    name: "Agriculture",
+                    questionNumber: 4,
+                    allQuestions: 5,
+                    description: "Which crop is known as the 'golden grain'?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Wheat"
+                        },
+                        {
+                            value: 2,
+                            label: "Corn"
+                        },
+                        {
+                            value: 3,
+                            label: "Rice"
+                        },
+                        {
+                            value: 4,
+                            label: "Barley"
+                        }
+                    ]
+                },
+                {
+                    name: "Agriculture",
+                    questionNumber: 5,
+                    allQuestions: 5,
+                    description: "What is the term for the practice of rotating crops to improve soil fertility?",
+                    variants: [
+                        {
+                            value: 1,
+                            label: "Crop rotation"
+                        },
+                        {
+                            value: 2,
+                            label: "Fallowing"
+                        },
+                        {
+                            value: 3,
+                            label: "Monoculture"
+                        },
+                        {
+                            value: 4,
+                            label: "Terracing"
+                        }
+                    ]
+                }
+            ],
+            correctVariants: [
+                {
+                    questionNumber: 1,
+                    value: 2
+                },
+                {
+                    questionNumber: 2,
+                    value: 3
+                },
+                {
+                    questionNumber: 3,
+                    value: 3
+                },
+                {
+                    questionNumber: 4,
+                    value: 1
+                },
+                {
+                    questionNumber: 5,
+                    value: 1
+                }
+            ]
+        },
+    ],
     isLogin: false,
     duration: 12,
     second: 120,
