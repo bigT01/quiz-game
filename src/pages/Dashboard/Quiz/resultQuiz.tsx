@@ -31,7 +31,7 @@ const ResultQuiz = () => {
                 navigate(`/dashboard/quiz/${id}/result/${Number(questionId)+1}`)
             } else{
                 setSelectedEmpty()
-                navigate(`/dashboard/quiz`)
+                navigate(`/dashboard`)
             }
         }
     }
@@ -64,10 +64,34 @@ const ResultQuiz = () => {
                         {data.variants[0] ? data.variants.map( (element) =>
                             (
                                 <label className="custom-radio">
-                                    <input type="radio" name={element.label} value={element.value} checked={selected[0] ? selected.filter(element => element.questionNumber === Number(questionId))[0].value === element.value : false}/>
+                                    <input type="radio" name={element.label} value={element.value} checked={
+                                        selected[0]
+                                            ?
+                                            selected.filter(element => element.questionNumber === Number(questionId))[0]
+                                                ?
+                                                selected.filter(element => element.questionNumber === Number(questionId))[0].value === element.value
+                                                :
+                                                false
+                                            :
+                                            false
+                                    }/>
                                     <span></span>
                                     <p>{element.label}</p>
-                                    {selected[0] ? selected.filter(element => element.questionNumber === Number(questionId))[0].value === element.value ? <p style={{color: 'red'}}>Your answer</p> : null : null}
+                                    {
+                                        selected[0]
+                                            ?
+                                            selected.filter(element => element.questionNumber === Number(questionId))[0]
+                                                ?
+                                                selected.filter(element => element.questionNumber === Number(questionId))[0].value === element.value
+                                                    ?
+                                                    <p style={{color: 'red'}}>Your answer</p>
+                                                    :
+                                                    null
+                                                :
+                                                null
+                                            :
+                                            null
+                                    }
                                     {quiz[0] ? quiz.filter(element => element.id === Number(id))[0].correctVariants.filter(element1 => element1.questionNumber === Number(questionId))[0].value === element.value ?
                                         <p style={{color: 'green'}}>Correct answer</p> : null : null}
                                 </label>

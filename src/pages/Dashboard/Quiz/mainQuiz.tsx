@@ -16,6 +16,7 @@ const MainQuiz = () => {
     const [isPopUp, setIsPopUp] = useState(false)
     const [isResult, setIsResult] = useState(false)
     const [percentage, setPercentage] = useState(0)
+    const [sec, setSec] = useState(100)
 
     const quiz= useStore(state => state.quiz)
     const selected = useStore(state => state.selected)
@@ -39,16 +40,26 @@ const MainQuiz = () => {
         }
     }, [isResult]);
 
+    useEffect(() => {
+        if(sec === 0){
+            setIsPopUp(true)
+            setIsResult(true)
+        }
+    }, [sec]);
+
+    const onClicked = (value: string) => {
+        setSelected({questionNumber: Number(questionId), value: Number(value)})
+        setSelectedTemp(value)
+    }
+
     //this function working when clicked button next or submit
     const onNextPage = () => {
         if(data && questionId){
             //here checking there is next question have or not in case if have it will navigate to the next question or will work submit question
             if(data?.questionNumber + 1 <= data?.allQuestions){
-                setSelected({questionNumber: Number(questionId), value: Number(selectedTemp)})
                 setSelectedTemp('0')
                 navigate(`/dashboard/quiz/${id}/start/${Number(questionId)+1}`)
             } else{
-                setSelected({questionNumber: Number(questionId), value: Number(selectedTemp)})
                 setSelectedTemp('0')
                 setIsPopUp(true)
             }
@@ -70,7 +81,7 @@ const MainQuiz = () => {
         <>
             <div className={'main-quiz-header'}>
                 <TextSubtext text={`${data.name} Quiz`} subText={'Answer the question below'}/>
-                <Timer/>
+                <Timer render={(second:any) => setSec(second.second)}/>
             </div>
             <section className={'main-quiz'}>
                 <div className="header_wrapper">
@@ -87,7 +98,7 @@ const MainQuiz = () => {
                             (
                                 <label className="custom-radio">
                                     <input type="radio" name={element.label} value={element.value} checked={selectedTemp === `${element.value}`}
-                                           onChange={(e) => setSelectedTemp(e.target.value)}/>
+                                           onChange={(e) => onClicked(e.target.value)}/>
                                     <span></span>
                                     <p>{element.label}</p>
                                 </label>

@@ -2,7 +2,7 @@ import React, {useEffect, useMemo, useState} from 'react';
 import {TimerTransform} from "../../utils/timerTransform";
 import {useStore} from "../../store/useStore";
 
-const Timer = () => {
+const Timer = ({render}: any) => {
     const duration = useStore(state => state.duration)
     const [second, setSecond] = useState(0)
     const [isRunning, setIsRunning] = useState(false);
@@ -37,7 +37,7 @@ const Timer = () => {
         }
     }, [second]);
     return (
-        <h3>Timer: {TimerTransform(second)}</h3>
+        <h3>Timer: {TimerTransform(second)}{render({second})}</h3>
     );
 };
 

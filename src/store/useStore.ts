@@ -62,7 +62,7 @@ export const useStore = create<IState>()((set) => ({
         name: 'History',
         image: '/history.png',
         deadline: '28/07/2024',
-        duration: 120,
+        duration: 10,
         point: 230,
         attempt: 'once',
         allQuestions: 5,
